@@ -1,4 +1,4 @@
 ﻿namespace Messanger.DataBase.MsSQL {
-    internal class MsSQLMessangerRepository : IMessangerRepository{
+    internal class MsSQLMessangerRepository {
     }
 }

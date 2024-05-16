@@ -31,7 +31,7 @@ namespace Messanger.DataBase.MySQL {
 
         public void AddUser(User user) {
             if(!OpenConnect()) return;
-            string query = "INSERT INTO TABLE users(null,@fsn,@scn,@log,@pass)";
+            string query = "INSERT INTO users values(null,@fsn,@scn,@log,@pass)";
             MySqlCommand command = _connection.CreateCommand();
             command.CommandText = query;
             command.Parameters.AddWithValue("@fsn",user.FirstName);
