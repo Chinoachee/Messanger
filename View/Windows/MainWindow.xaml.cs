@@ -1,5 +1,6 @@
 ﻿using Messanger.DataBase;
 using Messanger.DataBase.MySQL;
+using Messanger.DataBase.SQLite;
 using Messanger.Model.User;
 using System.Windows;
 
@@ -7,7 +8,7 @@ namespace Messanger.View.Windows {
     public partial class MainWindow : Window {
         IMessangerRepository _repository;
         public MainWindow() {
-            _repository = new MySQLMessangerRepository();
+            _repository = new SQLiteMessangerRepository;
             InitializeComponent();
         }
 
