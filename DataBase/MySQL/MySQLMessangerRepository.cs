@@ -43,7 +43,6 @@ namespace Messanger.DataBase.MySQL {
         }
 
         public void RemoveUser(User user) {
-
             if(!OpenConnect()) return;
             string query = "delete from users where id = @id";
             MySqlCommand command = _connection.CreateCommand();
@@ -54,7 +53,21 @@ namespace Messanger.DataBase.MySQL {
         }
 
         public void UpdateUser(User user) {
-            throw new NotImplementedException();
+            if(!OpenConnect()) return;
+            string query = @"update users
+                           set firstName = @fsn,
+                               secondName = @snc,
+                               login = @log,
+                               password = @pass where id = @id";
+            MySqlCommand command = _connection.CreateCommand();
+            command.CommandText = query;
+            command.Parameters.AddWithValue("@fsn",user.FirstName);
+            command.Parameters.AddWithValue("@scn",user.SecondName);
+            command.Parameters.AddWithValue("@log",user.Login);
+            command.Parameters.AddWithValue("@pass",user.Password);
+            command.Parameters.AddWithValue("@id",user.Id);
+            command.ExecuteNonQuery();
+            CloseConnect();
         }
     }
 }
