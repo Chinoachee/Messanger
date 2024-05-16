@@ -9,7 +9,7 @@ namespace Messanger.DataBase.MySQL {
             _connection = new MySqlConnection(connectionString);
         }
 
-        bool IMessangerRepository.OpenConnect() {
+        public bool OpenConnect() {
             try {
                 _connection.Open();
                 return true;
@@ -18,7 +18,7 @@ namespace Messanger.DataBase.MySQL {
             }
         }
 
-        bool IMessangerRepository.CloseConnect() {
+        public bool CloseConnect() {
             try {
                 _connection.Close();
                 return true;
