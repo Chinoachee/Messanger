@@ -1,5 +1,6 @@
 ﻿using Messanger.Model.User;
 using Microsoft.Data.Sqlite;
+using MySql.Data.MySqlClient;
 
 namespace Messanger.DataBase.SQLite {
     internal class SQLiteMessangerRepository : IMessangerRepository {
@@ -51,7 +52,13 @@ namespace Messanger.DataBase.SQLite {
 
         public void RemoveUser(User user)
         {
-            
+            if (!OpenConnect()) return;
+            string query = "DELETE FROM users WHERE id = @id;";
+            SqliteCommand command = _connection.CreateCommand();
+            command.CommandText = query;
+            command.Parameters.AddWithValue("@id", user.Id);
+            command.ExecuteNonQuery();
+            CloseConnect();
         }
 
         public void UpdateUser(User user)
