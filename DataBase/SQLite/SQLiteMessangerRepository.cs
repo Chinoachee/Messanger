@@ -63,7 +63,16 @@ namespace Messanger.DataBase.SQLite {
 
         public void UpdateUser(User user)
         {
-            throw new NotImplementedException();
+            if(!OpenConnect()) return;
+            string query = "UPDATE users SET firstName = @fn, secondName = @sn, login =@log, password = @pass WHERE id = @id";
+            SqliteCommand command= _connection.CreateCommand();
+            command.CommandText = query;
+            command.Parameters.AddWithValue("@fn", user.FirstName);
+            command.Parameters.AddWithValue("@sn", user.SecondName);
+            command.Parameters.AddWithValue("@log", user.Login);
+            command.Parameters.AddWithValue("@pass", user.Password);
+            command.ExecuteNonQuery();
+            CloseConnect(); 
         }
     }
 }
