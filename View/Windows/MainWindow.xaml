@@ -8,13 +8,19 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <StackPanel>
-            <TextBox x:Name="firstNameTextBox"/>
-            <TextBox x:Name="secondNameTextBox"/>
             <TextBox x:Name="loginTextBox"/>
             <TextBox x:Name="passwordTextBox"/>
-            <Button x:Name="buttonAccept" Click="buttonAccept_Click"/>
+            <Button x:Name="buttonAccept" Click="buttonAccept_Click"
+                    Height="50"/>
         </StackPanel>
-        
+        <StackPanel Height="200">
+        <Label x:Name="idNameLabel"/>
+        <Label x:Name="firstNameLabel"/>
+        <Label x:Name="secondNameLabel"/>
+        <Label x:Name="loginNameLabel"/>
+        <Label x:Name="passwordNameLabel"/>
+        </StackPanel>
+
 
     </Grid>
 </Window>

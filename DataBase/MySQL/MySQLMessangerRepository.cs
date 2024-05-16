@@ -79,7 +79,7 @@ namespace Messanger.DataBase.MySQL {
             command.Parameters.AddWithValue("@log",login);
             command.Parameters.AddWithValue("@pass",password);
             MySqlDataReader reader = command.ExecuteReader();
-
+            reader.Read();
             user.Id = reader.GetInt32(0);
             user.FirstName = reader.GetString(1);
             user.SecondName = reader.GetString(2);

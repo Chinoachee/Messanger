@@ -12,13 +12,13 @@ namespace Messanger.View.Windows {
         }
 
         private void buttonAccept_Click(object sender,RoutedEventArgs e) {
-            User newUser = new User() {
-                FirstName = firstNameTextBox.Text,
-                SecondName = secondNameTextBox.Text,
-                Login = loginTextBox.Text,
-                Password = passwordTextBox.Text,
-            };
-            _repository.AddUser(newUser);
+            User user = _repository.GetUser(loginTextBox.Text,passwordTextBox.Text);
+            if(user == null) return;
+            idNameLabel.Content = user.Id;
+            firstNameLabel.Content = user.FirstName;
+            secondNameLabel.Content = user.SecondName;
+            loginNameLabel.Content = user.Login;
+            passwordNameLabel.Content = user.Password;
         }
     }
 }
