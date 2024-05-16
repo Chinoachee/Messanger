@@ -8,7 +8,7 @@ namespace Messanger.View.Windows {
     public partial class MainWindow : Window {
         IMessangerRepository _repository;
         public MainWindow() {
-            _repository = new SQLiteMessangerRepository;
+            _repository = new SQLiteMessangerRepository();
             InitializeComponent();
         }
 
