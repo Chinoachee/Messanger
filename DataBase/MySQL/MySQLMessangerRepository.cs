@@ -69,5 +69,23 @@ namespace Messanger.DataBase.MySQL {
             command.ExecuteNonQuery();
             CloseConnect();
         }
+
+        public User GetUser(string login,string password) {
+            if(OpenConnect()) return null;
+            User user = new User();
+            string query = "select * from users where login = @log and password = @pass";
+            MySqlCommand command = _connection.CreateCommand();
+            command.CommandText = query;
+            command.Parameters.AddWithValue("@log",login);
+            command.Parameters.AddWithValue("@pass",password);
+            MySqlDataReader reader = command.ExecuteReader();
+
+            user.Id = reader.GetInt32(0);
+            user.FirstName = reader.GetString(1);
+            user.SecondName = reader.GetString(2);
+            user.Login = reader.GetString(3);
+             user.Password = reader.GetString(4);
+            return user;
+        }
     }
 }
