@@ -8,14 +8,29 @@ namespace Messanger.DataBase.SQLite {
             _connection = new SqliteConnection(connectionString);
         }
 
+        //методы для подключения к базе данных
         public bool CloseConnect()
         {
-            throw new NotImplementedException();
+            try
+            {
+                _connection.Close();
+                return true;
+            }catch (Exception ex)
+            {
+                return false;
+            }
         }
 
         public bool OpenConnect()
         {
-            throw new NotImplementedException();
+            try
+            {
+                _connection.Open();
+                return true;
+            }catch (Exception ex)
+            {
+                return false;
+            }
         }
     }
 }
