@@ -43,15 +43,7 @@ namespace Messanger.DataBase.MySQL {
         }
 
         public void RemoveUser(User user) {
-<<<<<<< HEAD
-          if(!OpenConnect())return;
-            string query = "DELETE FROM users WHERE id = @id;";
-            MySqlCommand command= _connection.CreateCommand();
-            command.CommandText = query;
-            command.Parameters.AddWithValue("@id", user.Id);
-            command.ExecuteNonQuery();
-            CloseConnect(); 
-=======
+
             if(!OpenConnect()) return;
             string query = "delete from users where id = @id";
             MySqlCommand command = _connection.CreateCommand();
@@ -59,7 +51,6 @@ namespace Messanger.DataBase.MySQL {
             command.Parameters.AddWithValue("@id",user.Id);
             command.ExecuteNonQuery();
             CloseConnect();
->>>>>>> 449fd80b176a455fc8f9366af0c593146cde84af
         }
 
         public void UpdateUser(User user) {
