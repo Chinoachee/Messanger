@@ -7,6 +7,6 @@ namespace Messanger.DataBase {
         void AddUser(User user);
         void RemoveUser(User user);
         void UpdateUser(User user);
-
+        User GetUser(string login,string password);
     }
 }
