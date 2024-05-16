@@ -74,5 +74,26 @@ namespace Messanger.DataBase.SQLite {
             command.ExecuteNonQuery();
             CloseConnect(); 
         }
+
+        public User GetUser(string login, string password)
+        {
+            if (!OpenConnect()) return null;
+            string query = "SELECT FROM users where login = @log and password = @pass";
+            SqliteCommand command = _connection.CreateCommand();
+            command.CommandText = query;
+            command.Parameters.AddWithValue("@log", login);
+            command.Parameters.AddWithValue("@pass", password);
+            SqliteDataReader reader = command.ExecuteReader();
+            User user = new User()
+            {
+                Id = reader.GetInt32(0),
+                FirstName = reader.GetString(1),
+                SecondName = reader.GetString(2),
+                Login = reader.GetString(3),
+                Password = reader.GetString(4)
+            };
+            return user;
+
+        }
     }
 }
