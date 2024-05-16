@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Messanger.Model.User;
+using MySql.Data.MySqlClient;
 
 namespace Messanger.DataBase.MySQL {
     internal class MySQLMessangerRepository : IMessangerRepository {
@@ -25,6 +26,19 @@ namespace Messanger.DataBase.MySQL {
             } catch(Exception) {
                 return false;
             }
+        }
+
+        public void AddUser(User user) {
+            if(!OpenConnect()) return;
+
+        }
+
+        public void RemoveUser(User user) {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateUser(User user) {
+            throw new NotImplementedException();
         }
     }
 }
