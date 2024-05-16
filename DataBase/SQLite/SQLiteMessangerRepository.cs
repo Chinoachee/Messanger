@@ -1,15 +1,21 @@
 ﻿using Messanger.Model.User;
 using Microsoft.Data.Sqlite;
 using MySql.Data.MySqlClient;
+using System.IO;
 
 namespace Messanger.DataBase.SQLite {
     internal class SQLiteMessangerRepository : IMessangerRepository {
         private const string connectionString = "Data Source ";
         private SqliteConnection _connection;
+        const string nameDataBase="messager.sqlite";
         public SQLiteMessangerRepository(string connectionString = connectionString) {
             _connection = new SqliteConnection(connectionString);
+            if(!File.Exists(nameDataBase))
+            { 
+                File.Create(nameDataBase);
+            }
         }
-
+        //в конструкторе создать базу данных
        
 
         //методы для подключения к базе данных

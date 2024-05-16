@@ -5,6 +5,7 @@ using Messanger.Model.User;
 using System.Windows;
 
 namespace Messanger.View.Windows {
+    //сделать автоматическое создание базы данных и таблиц sqlitemessager
     public partial class MainWindow : Window {
         IMessangerRepository _repository;
         public MainWindow() {
