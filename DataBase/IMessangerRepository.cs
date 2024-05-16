@@ -1,7 +1,6 @@
 ﻿namespace Messanger.DataBase {
     internal interface IMessangerRepository {
-        bool OpenConnect();
-        bool CloseConnect();
-
+        abstract bool OpenConnect();
+        abstract bool CloseConnect();
     }
 }
