@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.Sqlite;
+﻿using Messanger.Model.User;
+using Microsoft.Data.Sqlite;
 
 namespace Messanger.DataBase.SQLite {
     internal class SQLiteMessangerRepository : IMessangerRepository {
@@ -7,6 +8,8 @@ namespace Messanger.DataBase.SQLite {
         public SQLiteMessangerRepository(string connectionString = connectionString) {
             _connection = new SqliteConnection(connectionString);
         }
+
+       
 
         //методы для подключения к базе данных
         public bool CloseConnect()
@@ -31,6 +34,29 @@ namespace Messanger.DataBase.SQLite {
             {
                 return false;
             }
+        }
+        public void AddUser(User user)
+        {
+           if(!OpenConnect()) return;
+            string query = "INSERT INTO users VALUES (null, @fn, @sn, @log, @pas);";
+            SqliteCommand cmd = _connection.CreateCommand();
+            cmd.CommandText = query;
+            //добавление параметров в таблицу
+            cmd.Parameters.AddWithValue("@fn", user.FirstName);
+            cmd.Parameters.AddWithValue("@sn", user.SecondName);
+            cmd.Parameters.AddWithValue("@log", user.Login);
+            cmd.Parameters.AddWithValue("@pas", user.Password);
+            cmd.ExecuteNonQuery();  //выполнить запрос
+        }
+
+        public void RemoveUser(User user)
+        {
+            
+        }
+
+        public void UpdateUser(User user)
+        {
+            throw new NotImplementedException();
         }
     }
 }
