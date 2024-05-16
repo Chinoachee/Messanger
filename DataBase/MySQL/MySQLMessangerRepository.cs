@@ -84,7 +84,7 @@ namespace Messanger.DataBase.MySQL {
             user.FirstName = reader.GetString(1);
             user.SecondName = reader.GetString(2);
             user.Login = reader.GetString(3);
-             user.Password = reader.GetString(4);
+            user.Password = reader.GetString(4);
             return user;
         }
     }

@@ -84,6 +84,7 @@ namespace Messanger.DataBase.SQLite {
             command.Parameters.AddWithValue("@log", login);
             command.Parameters.AddWithValue("@pass", password);
             SqliteDataReader reader = command.ExecuteReader();
+            reader.Read();
             User user = new User()
             {
                 Id = reader.GetInt32(0),
