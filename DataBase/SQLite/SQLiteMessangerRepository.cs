@@ -10,8 +10,6 @@ namespace Messanger.DataBase.SQLite {
             _connection = new SqliteConnection(connectionString);
         }
 
-       
-
         //методы для подключения к базе данных
         public bool CloseConnect()
         {

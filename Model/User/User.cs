@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Messanger.Model.User
 {
-    internal class User
+    public class User
     {
 		private int id;
 
