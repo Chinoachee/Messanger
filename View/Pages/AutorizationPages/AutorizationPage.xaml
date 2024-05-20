@@ -22,18 +22,27 @@
                 <StackPanel Orientation="Horizontal"
                             HorizontalAlignment="Left"
                             Margin="50 0 0 0">
-                    <Button Background="Transparent"
-                            Height="50" Width="100"
-                            VerticalAlignment="Bottom"
-                            BorderThickness="0 0 0 3"
+                    <Button Style="{StaticResource MyButtonStyle}"
+                            x:Name="gotoLoginPage"
                             BorderBrush="#eeaa74"
+                            Height="40" Width="100"
+                            VerticalAlignment="Bottom"
                             Content="Вход"
-                            Foreground="White"
-                            FontFamily="{StaticResource RalewayRegular}"/>
-                    <Button/>
+                            FontFamily="{StaticResource RalewayRegular}"
+                            Margin="0 0 0 0"
+                            Click="gotoLoginPage_Click"/>
+                    <Button Style="{StaticResource MyButtonStyle}"
+                            x:Name="gotoRegistrationPage"
+                            Height="40" Width="100"
+                            VerticalAlignment="Bottom"
+                            Content="Регистрация"
+                            FontFamily="{StaticResource RalewayRegular}"
+                            Margin="15 0 0 0"
+                            Click="gotoRegistrationPage_Click"/>
                 </StackPanel>
                 <Frame x:Name="RegistrationFrame"
-                       Grid.Column="0" Grid.Row="1"/>
+                       Grid.Column="0" Grid.Row="1"
+                       NavigationUIVisibility="Hidden"/> 
             </Grid>
             <Border CornerRadius="0 25 25 0" Grid.Column="1">
                 <Border.Background>

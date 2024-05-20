@@ -9,11 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\10628.ttf" />
     <None Remove="Fonts\Raleway Regular.ttf" />
     <None Remove="Images\Pictures\mountains.jpg" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Fonts\10628.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Fonts\Raleway Regular.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

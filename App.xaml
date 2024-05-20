@@ -6,8 +6,10 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Resourse\Fonts\FontsResourse.xaml"/> 
+                <ResourceDictionary Source="Resourse\Fonts\FontsResourse.xaml"/>
+                <ResourceDictionary Source="Resourse\Fonts\FontRegularSemyBold.xaml"/>
+                <ResourceDictionary Source="Resourse\Buttons\AutorizationChooseButton.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
-    </Application.Resources>
+    </Application.Resources> 
 </Application>

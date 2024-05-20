@@ -8,9 +8,11 @@
         Height="450" Width="800"
         WindowStyle="None"
         AllowsTransparency="True"
-        Background="Transparent">
+        Background="Transparent"
+        MouseDown="MovingWindow">
     <Border CornerRadius="25">
-        <Frame x:Name="mainPage"/>
+        <Frame x:Name="mainPage" 
+               NavigationUIVisibility="Hidden"/>
     </Border>
     
 </Window>
