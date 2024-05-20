@@ -5,22 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Messanger.View.Windows"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <StackPanel>
-            <TextBox x:Name="loginTextBox"/>
-            <TextBox x:Name="passwordTextBox"/>
-            <Button x:Name="buttonAccept" Click="buttonAccept_Click"
-                    Height="50"/>
-        </StackPanel>
-        <StackPanel Height="200">
-        <Label x:Name="idNameLabel"/>
-        <Label x:Name="firstNameLabel"/>
-        <Label x:Name="secondNameLabel"/>
-        <Label x:Name="loginNameLabel"/>
-        <Label x:Name="passwordNameLabel"/>
-        </StackPanel>
-
-
-    </Grid>
+        Height="450" Width="800"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        MouseDown="MovingWindow">
+    <Border CornerRadius="25">
+        <Frame x:Name="mainPage" 
+               NavigationUIVisibility="Hidden"/>
+    </Border>
+    
 </Window>

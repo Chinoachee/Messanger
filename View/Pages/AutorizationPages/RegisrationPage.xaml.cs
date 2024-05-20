@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Messanger.View
+namespace Messanger.View.Pages.AutorizationPages
 {
     /// <summary>
-    /// Логика взаимодействия для AutorizationPage.xaml
+    /// Логика взаимодействия для RegisrationPage.xaml
     /// </summary>
-    public partial class AutorizationPage : Page
+    public partial class RegisrationPage : Page
     {
-        public AutorizationPage()
+        public RegisrationPage()
         {
             InitializeComponent();
         }

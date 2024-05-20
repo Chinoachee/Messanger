@@ -45,10 +45,5 @@ namespace Messanger.Model.User
 			get { return password; }
 			set { password = value; }
 		}
-
-
-
-
-
 	}
 }

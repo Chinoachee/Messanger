@@ -1,24 +1,22 @@
 ﻿using Messanger.DataBase;
 using Messanger.DataBase.MySQL;
-using Messanger.Model.User;
 using System.Windows;
+using System.Windows.Input;
 
 namespace Messanger.View.Windows {
     public partial class MainWindow : Window {
         IMessangerRepository _repository;
+        public static MainWindow window;
         public MainWindow() {
             _repository = new MySQLMessangerRepository();
             InitializeComponent();
+            mainPage.NavigationService.Navigate(new AutorizationPage());
+            window = this;
         }
-
-        private void buttonAccept_Click(object sender,RoutedEventArgs e) {
-            User user = _repository.GetUser(loginTextBox.Text,passwordTextBox.Text);
-            if(user == null) return;
-            idNameLabel.Content = user.Id;
-            firstNameLabel.Content = user.FirstName;
-            secondNameLabel.Content = user.SecondName;
-            loginNameLabel.Content = user.Login;
-            passwordNameLabel.Content = user.Password;
+        private void MovingWindow(object sender,RoutedEventArgs e) {
+            if(Mouse.LeftButton == MouseButtonState.Pressed) {
+                MainWindow.window.DragMove();
+            }
         }
     }
 }
