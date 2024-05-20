@@ -33,29 +33,8 @@
                          Padding="5 20 0 0"
                          Foreground="White"
                          FontFamily="{StaticResource RalewayRegular}"
-                         FontSize="15">
-                    <TextBox.Style>
-                        <Style TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
-                            <Setter Property="OverridesDefaultStyle" Value="True"/>
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="TextBox">
-                                        <Border Name="border"
-                                                BorderThickness="3 0 0 0"
-                                                BorderBrush="{TemplateBinding BorderBrush}"
-                                                Background="{TemplateBinding Background}">
-                                            <ScrollViewer x:Name="PART_ContentHost"/>
-                                        </Border>
-                                        <ControlTemplate.Triggers>
-                                            <Trigger Property="IsFocused" Value="True">
-                                                <Setter TargetName="border" Property="BorderBrush" Value="#eeaa74"/>
-                                            </Trigger>
-                                        </ControlTemplate.Triggers>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-                    </TextBox.Style>
+                         FontSize="15"
+                         Style="{StaticResource autorizationTextBox}">
                 </TextBox>
             </Grid>
             <Grid  Background="#424769" Height="50"

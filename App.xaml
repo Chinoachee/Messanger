@@ -9,6 +9,7 @@
                 <ResourceDictionary Source="Resourse\Fonts\FontsResourse.xaml"/>
                 <ResourceDictionary Source="Resourse\Fonts\FontRegularSemyBold.xaml"/>
                 <ResourceDictionary Source="Resourse\Buttons\AutorizationChooseButton.xaml"/>
+                <ResourceDictionary Source="Resourse\TextBoxs\TextBoxResourses.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources> 
